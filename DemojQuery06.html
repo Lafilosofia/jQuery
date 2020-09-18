@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>jQuery懂话效果-滑动</title>
+<style type="text/css">
+	input{
+		float: right;
+		margin-right: 10px;
+	}
+	
+	#div01{
+		height: 500px;
+		background: red;
+		opacity: 0.2;
+	}
+</style>
+</head>
+<script type="text/javascript" src = "../jquery-3.1.1.min.js"></script>
+<script type="text/javascript">
+	$(function(){
+		$("#div1 > input").click(function(){
+			//slideUp(毫秒数),该方法用于向上滑动元素
+			//毫秒数:参数规定效果的时长
+			$("#div01").slideUp(2000);
+			//slideUp(毫秒数,函数)
+			//函数:参数是滑动完成后所执行的函数事件
+			$("#div01").slideUp(2000,function(){
+				alert(1);
+			});
+		});
+		
+		$("#zk").click(function(){
+			$("#div01").slideDown(2000);
+		});
+		
+		//slideToggle方法可以再slideUp()和slidDown之间进行切换
+		$("#div01").slideToggle(2000);
+	});
+</script>
+<body>
+	<div id = "div01">
+		<input type = "button" value = "x"/>
+	</div>
+	
+	<input id = "zk" type = "button" value = "展开"/>
+	<input id = "dh" type = "button" value = "滑动效果"/>
+</body>
+</html>

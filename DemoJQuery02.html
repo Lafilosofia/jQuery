@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>jQuery获取元素下标的位置</title>
+</head>
+<script type="text/javascript" src = "../jquery-3.1.1.min.js"></script>
+<script type="text/javascript">
+	$(function(){
+		$("p").mouseover(function(){
+			//获取当前元素的下标,jQuery提供过去i节点的方法index()
+			var index = $(this).index();
+			console.log(index);
+		});
+	});
+</script>
+<body>
+	<p>aaa</p>
+	<p>bbb</p>
+	<p>ccc</p>
+	<p>ddd</p>
+</body>
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>简易的二级菜单</title>
+<style type="text/css">
+	li{
+		list-style: none;
+		cursor: puinter;
+	}
+	
+	ul ul{
+		display: none;
+	}
+</style>
+</head>
+<script type="text/javascript" src = "../jquery-3.1.1.min.js"></script>
+<script type="text/javascript">
+	$(function(){
+		$("#nav > li").click(function(){
+			//若当前对象的弟弟属性display是none则吧当前对象的弟弟打开
+			if($(this).next().css("display") == "none"){
+				//1.全部关闭,打开当前对象的弟弟
+				//$(".menu").css("display","none");
+				//$(this).next().css("display","block");
+				//打开当前对象的"弟弟"并且关闭当前对象"弟弟是"class = "menu"的兄弟
+				$(this).next().css("display","block").siblings(".menu").css("display","none")
+			}else{
+				//关闭当前对象的菜单
+				$(this).next().css("display","none")
+			}
+		});
+	});
+</script>
+<body>
+	<ul id = "nav">
+		<li><a href = "#" class = "navLink">益康特Java</a></li>
+		<ul class = "menu">
+			<li>课程介绍</li>
+			<li>研发团队</li>
+			<li>讲师风采</li>
+			<li>联系我们</li>
+		</ul>
+		
+		<li><a href = "#" class = "navLink">益康特Java</a></li>
+		<ul class = "menu">
+			<li>课程介绍</li>
+			<li>研发团队</li>
+			<li>讲师风采</li>
+			<li>联系我们</li>
+		</ul>
+		
+		<li><a href = "#" class = "navLink">益康特Java</a></li>
+		<ul class = "menu">
+			<li>课程介绍</li>
+			<li>研发团队</li>
+			<li>讲师风采</li>
+			<li>联系我们</li>
+		</ul>
+		
+		<li><a href = "#" class = "navLink">益康特Java</a></li>
+		<ul class = "menu">
+			<li>课程介绍</li>
+			<li>研发团队</li>
+			<li>讲师风采</li>
+			<li>联系我们</li>
+		</ul>
+		
+		
+	</ul>
+
+</body>
+</html>

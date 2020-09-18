@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<meta charset="UTF-8">
+<title>jQuery事件</title>
+</head>
+<script type="text/javascript" src = ../jquery-3.1.1.min.js></script>
+<script type="text/javascript">
+	//方式1
+	function f1(){
+		alert(1);
+	}
+	//方式2
+	/*$(function(){
+		//js
+		var p2 = document.getElementById("p2");
+		p2.onclick = function(){
+			alert(2);
+		}
+		});*/
+	//方式2
+	$(function(){
+		$("#p2").click(function(){
+			alert(2);	
+		});
+		//方式3
+		$(".p3").click(hh);
+		
+		//方式4
+		$("#div02 > .ul").on("click",".me",dianwo);
+		
+		//鼠标触摸事件
+		$("#p2").mouseover(function(){
+			console.log("touch!")
+		});
+		
+		//鼠标移出事件
+		$("#p2").mouseout(function(){
+			console.log("exit!");
+		});
+		
+		//点击文本框事件
+		$("#input").click(userNameAction);
+		//光标离开文本框事件
+		$("#input").blur(userNameCheck);
+		
+	});
+		function hh(){
+			alert(3);
+		}
+		function userNameAction(){
+			$("div01 > #input").val("");
+		}
+		function userNameCheck(){
+			$("div01 > #input").val("OK");
+		}
+		function dianwo(){
+			console.log("冒泡点击事件");
+		}
+	
+		
+		
+	
+</script>
+<body>
+	<p onclick = "f1()">按钮1</p>
+	<p id = "p2">按钮2</p>
+	<p class = "p3">按钮3</p>
+	<div id = "div01">
+		姓名:<input id = "input" type = "text" value = "填写姓名"/>
+	</div>
+	
+	<div id = "div02">
+		<ul class = "ul">
+			<li class = "me">点击我</li>
+		</ul>
+	</div>
+	
+	<ul>
+		<li class = "me"></li>
+	</ul>
+	
+</body>
+</html>

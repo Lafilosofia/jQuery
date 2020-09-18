@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>jQuery合成事件</title>
+<style type="text/css">
+	.big{
+		width: 500px;
+	}
+	
+	.small{
+		width: 156px;
+	}
+</style>
+</head>
+<script type="text/javascript" src = "../jquery-3.1.1.min.js"></script>
+<script type="text/javascript">
+	$(function(){
+		/*hover()方法用于模拟光标悬停事件,当光标移动到元素上时
+		会触发第一个函数,移除这个元素会触发第二个函数*/
+		$("img:eq(0)").hover(function(){
+			$("img:eq(0)").removeClass().addClass("big");
+		},function(){
+			$("img:eq(0)").removeClass().addClass("small");
+		});
+		
+		/*toggle(毫秒数)方法切换元素的可见状态,如果被选元素可见,
+		则隐藏这些元素,如果被选元素隐藏,则显示这些元素*/
+		//$("img:eq(1)").toggle(5.000);
+		//setInterval(function(){
+			//$("img:eq(1)").toggle(1500)
+		//},2000);
+		
+		$("p").hover(function(){
+			$("img:eq(2)").attr("src","../img/12.png");
+		},function(){
+			$("img:eq(2)").attr("src","");
+		});
+	});
+</script>
+<body>
+	<img src = "../img/02.png"/>
+	<img src = "../img/03.png"/>
+	<p>显示图片</p>
+</body>
+</html>

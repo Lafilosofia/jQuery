@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>动画演示</title>
+<style type="text/css">
+	#d div{
+		width: 200px;
+		height: 200px;
+		background: orange;
+		opacity: 0.3:
+	}
+</style>
+</head>
+<script type="text/javascript" src = "../jquery-3.1.1.min.js"></script>
+<script type="text/javascript">
+	function hide(){
+		$("img:eq(0)").hide(2000);
+	}
+	
+	function show(){
+		$("img:eq(0)").show(2000);
+	}
+	
+	function down(){
+		$("#id div").slideBown(2000);
+	}
+	
+	function up(){
+		$("#d div").slideUp(2000);
+	}
+</script>
+<body>
+	<div>
+		<input type = "button" value = "展开" onclick = "show()"/>
+		<input type = "button" value = "隐藏" onclick = "hide()"/>
+		<input type = "button" value = "打开" onclick = "down()"/>
+		<input type = "button" value = "收起" onclick = "up()"/>
+		<input type = "button" value = "提示" onclick = "hint()"/>
+		<input type = "button" value = "动动" onclick = "diy()"/>
+	</div>
+	
+	<div id = "d">
+		<img src = "../img/7.png"/>
+		<img src = "../img/6.png"/>
+		<img src = "../img/9.png"/>
+		<div class = "div"></div>
+	</div>
+</body>
+</html>
